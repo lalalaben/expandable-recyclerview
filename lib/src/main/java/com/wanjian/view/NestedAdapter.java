@@ -1,10 +1,8 @@
 package com.wanjian.view;
 
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.ViewGroup;
 
-import static android.support.v7.widget.RecyclerView.NO_ID;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by wanjian on 2018/1/29.
@@ -12,11 +10,12 @@ import static android.support.v7.widget.RecyclerView.NO_ID;
  * 分组adapter，支持多种group布局，多种child布局
  */
 
-public abstract class NestedAdapter<G extends ViewHolder, C extends ViewHolder> extends RecyclerView.Adapter<ViewHolder> {
+public abstract class NestedAdapter<G extends RecyclerView.ViewHolder, C extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public static final String TAG = NestedAdapter.class.getName();
+    private static final long NO_ID = 0;
 
     @Override
-    public final ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public final RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         int groupCount = getSafeGroupCount();
         for (int i = 0; i < groupCount; i++) {
             int type = getGroupItemViewType(i);
@@ -64,7 +63,7 @@ public abstract class NestedAdapter<G extends ViewHolder, C extends ViewHolder> 
     }
 
     @Override
-    public final void onBindViewHolder(ViewHolder holder, int position) {
+    public final void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         int groupCount = getSafeGroupCount();
         int count = 0;
         for (int i = 0; i < groupCount; i++) {

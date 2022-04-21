@@ -1,12 +1,7 @@
 package com.wanjian.view.demo;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
-
 import com.wanjian.view.ExpandableAdapter;
 import com.wanjian.view.demo.adapter.VExpandableAdapter;
 import com.wanjian.view.demo.data.Shop;
@@ -15,6 +10,11 @@ import java.util.List;
 
 import static com.wanjian.view.demo.utils.Utils.geneRandomData;
 import static com.wanjian.view.demo.utils.Utils.showJson;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 /**
